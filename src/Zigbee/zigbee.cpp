@@ -38,7 +38,7 @@ static esp_err_t onZigbeeAction(esp_zb_core_action_callback_id_t callback_id, co
         case ESP_ZB_CORE_CMD_CUSTOM_CLUSTER_REQ_CB_ID:
             log_i("Receive Zigbee action ESP_ZB_CORE_CMD_CUSTOM_CLUSTER_REQ_CB_ID");
 
-            if (onAttributeUpdatedCallback != NULL) {
+            if (onCustomClusterCommandCallback != NULL) {
                 ret = onCustomClusterCommandCallback((esp_zb_zcl_custom_cluster_command_message_t *)message);
             }
             break;
